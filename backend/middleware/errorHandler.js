@@ -4,7 +4,7 @@ export const notFound = (req, res, next) => {
 
 export const errorHandler = (err, req, res, next) => {
     console.error(err);
-    const status = resizeBy.statusCode !== 200 ? res.StatusCode : 500;
+    const status = res.statusCode !== 200 ? res.statusCode : 500;
     res.status(status).json({
         message:err.message || "Server error",
     });
